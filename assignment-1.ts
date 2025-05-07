@@ -29,13 +29,12 @@ console.log(filterByRating(books));
 // Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
 
 // problem 3
-function concatenateArrays<T>(...arrays: T[][]): T[] {}
+// function concatenateArrays<T>(...arrays: T[][]): T[] {}
 
-concatenateArrays(["a", "b"], ["c"]); // Output: ["a", "b", "c"]
-concatenateArrays([1, 2], [3, 4], [5]); // Output: [1, 2, 3, 4, 5]
+// concatenateArrays(["a", "b"], ["c"]); // Output: ["a", "b", "c"]
+// concatenateArrays([1, 2], [3, 4], [5]); // Output: [1, 2, 3, 4, 5]
 
 // problem 4
-
 class Vehicle {
   private _make: string;
   private _year: number;
@@ -66,3 +65,19 @@ const myCar = new Car("Toyota", 2020, "Corolla");
 console.log(myCar.getInfo()); // Output: "Make: Toyota, Year: 2020"
 console.log(myCar.getModel());
 // Output: "Model: Corolla"
+
+
+
+// problem 5
+function processValue(value: string | number): number {
+  if (typeof value === "string") {
+    return value.length;
+  } else {
+    return value * 2;
+  }
+}
+
+console.log(processValue("anowar"));
+; // Output: 5
+console.log(processValue(434));
+;      // Output: 20
