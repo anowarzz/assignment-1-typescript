@@ -22,10 +22,47 @@ function filterByRating(
 const books = [
   { title: "Book A", rating: 4.5 },
   { title: "Book B", rating: 3.2 },
-  { title: "Book C", rating: 5.0 }
+  { title: "Book C", rating: 5.0 },
 ];
 
 console.log(filterByRating(books));
-; 
 // Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
 
+// problem 3
+function concatenateArrays<T>(...arrays: T[][]): T[] {}
+
+concatenateArrays(["a", "b"], ["c"]); // Output: ["a", "b", "c"]
+concatenateArrays([1, 2], [3, 4], [5]); // Output: [1, 2, 3, 4, 5]
+
+// problem 4
+
+class Vehicle {
+  private _make: string;
+  private _year: number;
+
+  constructor(make: string, year: number) {
+    this._make = make;
+    this._year = year;
+  }
+
+  public getInfo(): string {
+    return `Make: ${this._make}, Year: ${this._year}`;
+  }
+}
+
+class Car extends Vehicle {
+  private _model: string;
+  constructor(make: string, year: number, model: string) {
+    super(make, year);
+    this._model = model;
+  }
+
+  public getModel(): string {
+    return `Model: ${this._model}`;
+  }
+}
+
+const myCar = new Car("Toyota", 2020, "Corolla");
+console.log(myCar.getInfo()); // Output: "Make: Toyota, Year: 2020"
+console.log(myCar.getModel());
+// Output: "Model: Corolla"
