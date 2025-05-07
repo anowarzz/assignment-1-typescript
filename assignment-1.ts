@@ -7,10 +7,6 @@ function formatString(input: string, toUpper?: boolean): string {
   }
 }
 
-console.log(formatString("gunHfjdkjdfIdfdf")); // Output: "HELLO"
-console.log(formatString("anoar hosen", true)); // Output: "HELLO"
-console.log(formatString("aFNAODFJDKF", false)); // Output: "hello"
-
 // problem -2
 function filterByRating(
   items: { title: string; rating: number }[]
@@ -18,15 +14,6 @@ function filterByRating(
   const highRatedItems = items.filter((item) => item.rating >= 4);
   return highRatedItems;
 }
-
-const books = [
-  { title: "Book A", rating: 4.5 },
-  { title: "Book B", rating: 3.2 },
-  { title: "Book C", rating: 5.0 },
-];
-
-console.log(filterByRating(books));
-// Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
 
 // problem 3
 // function concatenateArrays<T>(...arrays: T[][]): T[] {}
@@ -61,11 +48,6 @@ class Car extends Vehicle {
   }
 }
 
-const myCar = new Car("Toyota", 2020, "Corolla");
-console.log(myCar.getInfo()); // Output: "Make: Toyota, Year: 2020"
-console.log(myCar.getModel());
-// Output: "Model: Corolla"
-
 // problem 5
 function processValue(value: string | number): number {
   if (typeof value === "string") {
@@ -75,8 +57,6 @@ function processValue(value: string | number): number {
   }
 }
 
-console.log(processValue("anowar")); // Output: 5
-console.log(processValue(434)); // Output: 20
 // problem 6
 interface Product {
   name: string;
@@ -98,15 +78,6 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
   return expensiveProduct;
 }
 
-const products = [
-  { name: "Pen", price: 10 },
-  { name: "Notebook", price: 25 },
-  { name: "Bag", price: 50 },
-];
-
-console.log(getMostExpensiveProduct(products));
-// Output: { name: "Bag", price: 50 }
-
 // problem 7
 enum Day {
   Monday,
@@ -126,15 +97,12 @@ function getDayType(day: Day): string {
   }
 }
 
-console.log(getDayType(Day.Monday)); // Output: "Weekday"
-console.log(getDayType(Day.Sunday)); // Output: "Weekend"
-
 // problem 8
 async function squareAsync(n: number): Promise<number> {
   const squarePromise: Promise<number> = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (n < 0) {
-        reject("Negative Number Not Allowed");
+        reject("Negative number not allowed");
       } else {
         resolve(n * n);
       }
@@ -142,6 +110,3 @@ async function squareAsync(n: number): Promise<number> {
   });
   return squarePromise;
 }
-
-squareAsync(5).then(console.log); // Output after 1s: 16
-squareAsync(-44).catch(console.error); // Output: Error: Negative number not allowed
