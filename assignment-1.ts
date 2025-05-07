@@ -66,8 +66,6 @@ console.log(myCar.getInfo()); // Output: "Make: Toyota, Year: 2020"
 console.log(myCar.getModel());
 // Output: "Model: Corolla"
 
-
-
 // problem 5
 function processValue(value: string | number): number {
   if (typeof value === "string") {
@@ -77,7 +75,37 @@ function processValue(value: string | number): number {
   }
 }
 
-console.log(processValue("anowar"));
-; // Output: 5
-console.log(processValue(434));
-;      // Output: 20
+console.log(processValue("anowar")); // Output: 5
+console.log(processValue(434)); // Output: 20
+// problem 6
+interface Product {
+  name: string;
+  price: number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null {
+  if (products.length === 0) {
+    return null;
+  }
+  const expensiveProduct = products.reduce((mostExpensive, current) => {
+    if (current.price > mostExpensive.price) {
+      return current;
+    } else {
+      return mostExpensive;
+    }
+  }, products[0]);
+
+  return expensiveProduct;
+}
+
+const products = [
+  { name: "Pen", price: 10 },
+  { name: "Notebook", price: 25 },
+  { name: "Bag", price: 50 },
+];
+
+console.log(getMostExpensiveProduct(products));
+// Output: { name: "Bag", price: 50 }
+
+
+// problem 7 
