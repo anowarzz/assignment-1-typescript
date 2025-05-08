@@ -1,4 +1,4 @@
-# 1. How does TypeScript help in improving code quality and project maintainability?
+# Blog 1. How does TypeScript help in improving code quality and project maintainability?
 
 When you are building small projects or experimenting with your own ideas, then JavaScript is great to go with. It’s a fast, flexible, high-level language that is easy to write and execute. But if you start building any big project and your codebase starts growing and you collaborate with team members, then JavaScript can become messy and unpredictable. That’s when TypeScript steps into the game as a lifesaver for you and your team members.
 
@@ -66,3 +66,63 @@ TypeScript's features, such as interfaces and modules, promote modular and reusa
 TypeScript has proven to be an invaluable tool for modern web development, particularly in large-scale applications and team environments. Its static typing system, enhanced IDE support, and robust error-catching capabilities make it an excellent choice for developers who prioritize code quality and maintainability.
 
 So why not use TypeScript in your next project and ensure better type safety!
+
+---
+
+<!-- Divider for separating blog posts -->
+<hr />
+<hr />
+
+# Blog 2. Union and Intersection Types in TypeScript
+
+TypeScript is awesome for helping us manage types in a way that JavaScript can’t. Two really cool features that come with TypeScript are **union types** and **intersection types**. They help make our code more flexible and precise. In this post we will explore these concepts in detail.
+
+### 1. Union Types
+
+A **union type** allows a variable to hold multiple types of values. You can think of it like saying, "This variable can be **either** a string **or** a number". You should use the `|` symbol to define a union.
+
+#### Example Code:
+
+```tsx
+function printId(id: string | number) {
+  console.log(`ID: ${id}`);
+}
+
+printId("123"); // Works, because it's a string
+printId(456); // Works, because it's a number
+```
+
+In the example above, the `id` can be either a string or a number, giving us flexibility to use it in different use cases.
+
+### 2. Intersection Types
+
+An **intersection type** is like a combination of multiple types. It says, "This variable to have **all** the properties of these types combined."You should use the `&` symbol to define an intersection type.
+
+#### Intersection Example:
+
+```tsx
+interface Person {
+  name: string;
+  age: number;
+}
+
+interface EmployeeInfo {
+  employeeId: string;
+}
+
+type EmployeeDetails = Person & EmployeeInfo;
+
+const employee: EmployeeDetails = {
+  name: "Riaz Hasan",
+  age: 30,
+  employeeId: "R1234",
+};
+
+console.log(employee);
+```
+
+Here, `EmployeeDetails` type is a combination of both `Person` and `Employee`. So, `employee` must have all properties from both types — `name`, `age`, and `employeeId`.
+
+### Conclusion
+
+Union and intersection types help TypeScript to be more flexible and precise when it comes to handling different kinds of data. Union types give you options for multiple types, and intersection types combine multiple types into one type. They're both features that make your code cleaner and more manageable.
