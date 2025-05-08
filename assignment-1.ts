@@ -20,14 +20,14 @@ function filterByRating(
 
 
 function concatenateArrays<T>(...arrays: T[][]): T[] {
-  const concateArray: T[] = [];
+  const concatArray: T[] = [];
 
   for (const array of arrays) {
     for (const item of array) {
-      concateArray.push(item);
+      concatArray.push(item);
     }
   }
-  return concateArray;
+  return concatArray;
 }
 
 
