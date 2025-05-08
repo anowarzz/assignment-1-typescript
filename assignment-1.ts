@@ -1,13 +1,14 @@
-// problem -1
 function formatString(input: string, toUpper?: boolean): string {
-  if (toUpper === false) {
-    return input.toLowerCase();
-  } else {
+  if (toUpper === true || toUpper === undefined) {
     return input.toUpperCase();
+  } else {
+    return input.toLowerCase();
   }
 }
 
-// problem -2
+
+
+
 function filterByRating(
   items: { title: string; rating: number }[]
 ): { title: string; rating: number }[] {
@@ -15,13 +16,22 @@ function filterByRating(
   return highRatedItems;
 }
 
-// problem 3
-// function concatenateArrays<T>(...arrays: T[][]): T[] {}
 
-// concatenateArrays(["a", "b"], ["c"]); // Output: ["a", "b", "c"]
-// concatenateArrays([1, 2], [3, 4], [5]); // Output: [1, 2, 3, 4, 5]
 
-// problem 4
+
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+  const concateArray: T[] = [];
+
+  for (const array of arrays) {
+    for (const item of array) {
+      concateArray.push(item);
+    }
+  }
+  return concateArray;
+}
+
+
+
 class Vehicle {
   private _make: string;
   private _year: number;
@@ -48,7 +58,9 @@ class Car extends Vehicle {
   }
 }
 
-// problem 5
+
+
+
 function processValue(value: string | number): number {
   if (typeof value === "string") {
     return value.length;
@@ -57,7 +69,8 @@ function processValue(value: string | number): number {
   }
 }
 
-// problem 6
+
+
 interface Product {
   name: string;
   price: number;
@@ -78,7 +91,8 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
   return expensiveProduct;
 }
 
-// problem 7
+
+
 enum Day {
   Monday,
   Tuesday,
@@ -97,7 +111,10 @@ function getDayType(day: Day): string {
   }
 }
 
-// problem 8
+
+
+
+
 async function squareAsync(n: number): Promise<number> {
   const squarePromise: Promise<number> = new Promise((resolve, reject) => {
     setTimeout(() => {
